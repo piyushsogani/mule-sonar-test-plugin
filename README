@@ -2,12 +2,23 @@ Mule Sonar Test Plugin
 ----------------------
 
 This plugin adds metrics related to the time required to execute the test of a project.
+The purpose of these metrics is to help to improve the time required to run the tests, which is useful to improve the build cycle and also motivates developers to run test locally before each commit.
+Because the metrics are based on execution time, the measures you collect on each build cycle can be different. These metrics should be used a guides to know where the problems are, but to punish people.
 
-//TODO(pablo.kraan): add documentation
-Average test time
-Good execution time
-Good execution time (%)
-Ugly execution time
-Ugly execution time (%)
-Bad execution time
-Bad execution time (%)
+
+Metrics
+=======
+
+*Average test time*: average time required to run a single test method.
+
+*Good execution time*: number of test methods that were executed in a time considered good
+
+*Good execution time (%)*: percentage of good tests
+
+*Ugly execution time*: number of test methods that were executed in a time considered ugly, that is, need some work but are still acceptable
+
+*Ugly execution time (%)*: percentage of ugly tests
+
+*Bad execution time*: number of test methods that were executed in a time considered bad, that is, must be improved ASAP
+
+*Bad execution time (%)*: percentage of bad tests
