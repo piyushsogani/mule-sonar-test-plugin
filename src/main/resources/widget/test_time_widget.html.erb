@@ -1,0 +1,26 @@
+<%
+      if measure('average_test_time')
+%>
+<div class="dashbox">
+    	<!--<h3>Test execution time</h3>-->
+    	<p>
+    	 <span title="<%= metric('average_test_time').description -%>">
+    	  <%= metric('average_test_time').short_name -%>: <%= format_measure('average_test_time') -%>
+    	 <!--</span><%= trend_icon(measure('average_test_time')) -%></p>-->
+    	 </span><%= trend_icon(measure('average_test_time')) -%></p>
+</div>
+<div class="yui-u">
+    <%
+      def generate_label_name(metric_name)
+        label_name = metric(metric_name).short_name
+        label_name = label_name + " (" + formatted_value(measure(metric_name)) + ")"
+        return label_name
+      end
+      labels = generate_label_name('good_test_time_count') + "|" + generate_label_name('ugly_test_time_count') + "|" + generate_label_name('bad_test_time_count')
+      data = formatted_value(measure('good_test_time_count')) + "," + formatted_value(measure('ugly_test_time_count')) + "," + formatted_value(measure('bad_test_time_count'))
+    %>
+	<%= gchart("chs=290x160&chd=t:#{data}&cht=p&chl=#{labels}&chco=00FF00,FFFF00,FF0000") -%>
+</div>
+<%
+	end
+%>

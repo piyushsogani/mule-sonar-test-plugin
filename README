@@ -1,0 +1,13 @@
+Mule Sonar Test Plugin
+----------------------
+
+This plugin adds metrics related to the time required to execute the test of a project.
+
+//TODO(pablo.kraan): add documentation
+Average test time
+Good execution time
+Good execution time (%)
+Ugly execution time
+Ugly execution time (%)
+Bad execution time
+Bad execution time (%)
